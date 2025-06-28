@@ -16,7 +16,7 @@ const popularSkills = [
 
 export const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B0F19] text-white overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-[#121212] text-white overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
 
