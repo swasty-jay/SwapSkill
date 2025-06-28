@@ -1,18 +1,7 @@
 import { HeroSection } from "@/components/custom/HeroSection";
-import { SkillCard } from "@/components/custom/SkillCard";
 import { Navbar } from "@/components/custom/NavBar";
 import HowToGetStarted from "@/components/custom/GetStarted";
 import Footer from "@/components/custom/Footer";
-
-const popularSkills = [
-  {
-    id: 1,
-    title: "Graphic Design",
-    description: "Learn or teach design skills",
-  },
-  { id: 2, title: "Web Development", description: "Frontend, backend & more" },
-  { id: 3, title: "Photography", description: "Capture stunning moments" },
-];
 
 export const HomePage = () => {
   return (
