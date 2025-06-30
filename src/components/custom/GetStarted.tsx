@@ -122,13 +122,13 @@ const getDifficultyColor = (difficulty: string) =>
 
 export default function HowToGetStarted() {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+    <section className="py-12 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center mb-16"
+        className="text-center mb-12"
       >
         <motion.div
           initial={{ scale: 0 }}
@@ -143,11 +143,11 @@ export default function HowToGetStarted() {
           </span>
         </motion.div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter font-bold text-white mb-4 sm:mb-6 leading-tight">
           How to Get Started
         </h2>
 
-        <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4">
+        <p className="text-gray-300 text-[12px] sm:text-[13px] md:text-[15px] font-roboto lg:text-lg max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4">
           Join thousands of professionals already growing their skills through
           meaningful exchanges. Our streamlined process gets you connected in
           minutes, not hours.
@@ -158,14 +158,14 @@ export default function HowToGetStarted() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-6 sm:mt-8 text-xs sm:text-sm text-gray-400"
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mt-6 sm:mt-8 text-xs sm:text-sm text-gray-400"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Users className="h-3 w-3 sm:h-4 sm:w-4 text-[#10B981]" />
             <span>50,000+ Active Users</span>
           </div>
           <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-[#10B981]" />
             <span>Setup in Under 10 Minutes</span>
           </div>

@@ -1,21 +1,3 @@
-// import { Card, CardContent } from "@/components/ui/card";
-
-// interface SkillCardProps {
-//   title: string;
-//   description: string;
-// }
-
-// export const SkillCard = ({ title, description }: SkillCardProps) => {
-//   return (
-//     <Card className="backdrop-blur-md bg-white/5 border border-white/10 hover:shadow-lg transition text-white">
-//       <CardContent className="p-4 space-y-2">
-//         <h4 className="font-semibold text-lg">{title}</h4>
-//         <p className="text-gray-300 text-sm">{description}</p>
-//       </CardContent>
-//     </Card>
-//   );
-// };
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   FaCode,

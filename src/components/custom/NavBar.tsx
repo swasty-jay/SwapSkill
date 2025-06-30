@@ -30,8 +30,8 @@ export const Navbar = () => {
   }, [drawerOpen]);
 
   return (
-    <header className="border-b border-white/10 backdrop-blur-md bg-white/5 fixed top-0 right-0 left-0 z-50">
-      <div className="relative max-w-6xl mx-auto flex items-center justify-between p-3">
+    <header className="border-b border-white/10 backdrop-blur-md bg-white/5 fixed top-0 right-0 left-0  z-50">
+      <div className="relative max-w-6xl mx-auto flex items-center justify-between p-1">
         {/* Logo on Left */}
         <Link to="/" className="text-xl font-bold text-gray-100 z-10">
           SwapSkill

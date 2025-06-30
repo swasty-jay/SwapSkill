@@ -1,5 +1,3 @@
-// import { InfiniteSlider } from "../ui/infinite-slider";
-
 import { InfiniteSlider } from "../ui/infinite-slider";
 
 // export function PopularSkills() {
