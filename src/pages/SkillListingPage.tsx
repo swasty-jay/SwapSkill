@@ -22,6 +22,7 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Enhanced TypeScript interfaces
 type Skill = {
@@ -72,7 +73,7 @@ const CATEGORIES = [
   "Crafts",
 ];
 
-const SKILL_LEVELS = ["All Levels", "Beginner", "Intermediate", "Advanced"];
+// const SKILL_LEVELS = ["All Levels", "Beginner", "Intermediate", "Advanced"];
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: "newest", label: "Newest First" },
@@ -146,7 +147,7 @@ const FilterButton: FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ active, onClick, children, className = "" }) => (
-  <button
+  <Button
     onClick={onClick}
     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
       active
@@ -155,7 +156,7 @@ const FilterButton: FC<{
     } ${className}`}
   >
     {children}
-  </button>
+  </Button>
 );
 
 /**
@@ -340,23 +341,6 @@ const MobileFilterModal: FC<{
             </div>
           </div>
 
-          {/* Skill Level */}
-          <div>
-            <h3 className="font-semibold mb-3">Skill Level</h3>
-            <div className="grid grid-cols-2 gap-2">
-              {SKILL_LEVELS.map((level) => (
-                <FilterButton
-                  key={level}
-                  active={filters.level === level}
-                  onClick={() => onFilterChange("level", level)}
-                  className="text-xs"
-                >
-                  {level}
-                </FilterButton>
-              ))}
-            </div>
-          </div>
-
           <div className="flex gap-3 pt-4">
             <button
               onClick={onClearFilters}
@@ -409,7 +393,7 @@ const SkillListingPlatform: FC = () => {
   const filteredAndSortedSkills = useMemo(() => {
     if (!skills) return [];
 
-    let filtered = skills.filter((skill) => {
+    const filtered = skills.filter((skill) => {
       const matchesSearch =
         skill.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         skill.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -537,8 +521,8 @@ const SkillListingPlatform: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Desktop Sidebar */}
-          <aside className="hidden lg:block w-80 flex-shrink-0">
-            <div className="bg-white rounded-xl shadow-sm border p-6 sticky top-8">
+          <aside className="hidden lg:block w-80 flex-shrink-0 start-left-0">
+            <div className="bg-white rounded-xl shadow-sm border p-6  sticky top-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-bold text-gray-900">Filters</h2>
                 <button
@@ -562,58 +546,6 @@ const SkillListingPlatform: FC = () => {
                         className="w-full justify-start"
                       >
                         {category}
-                      </FilterButton>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Skill Level */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">
-                    Skill Level
-                  </h3>
-                  <div className="space-y-2">
-                    {SKILL_LEVELS.map((level) => (
-                      <FilterButton
-                        key={level}
-                        active={filters.level === level}
-                        onClick={() => handleFilterChange("level", level)}
-                        className="w-full justify-start"
-                      >
-                        {level}
-                      </FilterButton>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Rating Filter */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">
-                    Minimum Rating
-                  </h3>
-                  <div className="space-y-2">
-                    {[4, 3, 2, 1].map((rating) => (
-                      <FilterButton
-                        key={rating}
-                        active={filters.rating === rating}
-                        onClick={() => handleFilterChange("rating", rating)}
-                        className="w-full justify-start"
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="flex">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`w-4 h-4 ${
-                                  i < rating
-                                    ? "fill-yellow-400 text-yellow-400"
-                                    : "text-gray-300"
-                                }`}
-                              />
-                            ))}
-                          </div>
-                          <span>& up</span>
-                        </div>
                       </FilterButton>
                     ))}
                   </div>
