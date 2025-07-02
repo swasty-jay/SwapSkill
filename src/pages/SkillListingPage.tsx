@@ -23,6 +23,9 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { FilterState } from "@/types/Types";
+import { FilterButton } from "@/components/custom/FilterButton";
+import SideBar from "@/components/custom/SideBar";
 
 // Enhanced TypeScript interfaces
 type Skill = {
@@ -40,15 +43,6 @@ type Skill = {
   tags?: string[];
   teacherName?: string;
   isOnline?: boolean;
-};
-
-type FilterState = {
-  category: string;
-  priceRange: [number, number];
-  rating: number;
-  level: string;
-  location: string;
-  isOnline: boolean | null;
 };
 
 type SortOption =
@@ -141,23 +135,23 @@ const fetchSkills = async (): Promise<Skill[]> => {
 /**
  * Reusable Filter Button Component
  */
-const FilterButton: FC<{
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-  className?: string;
-}> = ({ active, onClick, children, className = "" }) => (
-  <Button
-    onClick={onClick}
-    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-      active
-        ? "bg-blue-600 text-white shadow-md"
-        : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
-    } ${className}`}
-  >
-    {children}
-  </Button>
-);
+// const FilterButton: FC<{
+//   active: boolean;
+//   onClick: () => void;
+//   children: React.ReactNode;
+//   className?: string;
+// }> = ({ active, onClick, children, className = "" }) => (
+//   <Button
+//     onClick={onClick}
+//     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+//       active
+//         ? "bg-blue-600 text-white shadow-md"
+//         : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+//     } ${className}`}
+//   >
+//     {children}
+//   </Button>
+// );
 
 /**
  * Reusable Input Component
@@ -251,7 +245,7 @@ const SkillCard: FC<{
 
           <div className="space-y-3">
             {/* Teacher and Rating */}
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4 text-gray-400" />
                 <span className="text-sm text-gray-600">
@@ -264,7 +258,7 @@ const SkillCard: FC<{
                   <span className="text-sm font-medium">{skill.rating}</span>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Location and Duration */}
             <div className="flex items-center justify-between text-sm text-gray-500">
@@ -370,14 +364,6 @@ const SkillListingPlatform: FC = () => {
   const [sortBy, setSortBy] = useState<SortOption>("newest");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  const [filters, setFilters] = useState<FilterState>({
-    category: "All Categories",
-    priceRange: [0, 1000],
-    rating: 0,
-    level: "All Levels",
-    location: "",
-    isOnline: null,
-  });
 
   // Data fetching
   const {
@@ -387,6 +373,15 @@ const SkillListingPlatform: FC = () => {
   } = useQuery<Skill[]>({
     queryKey: ["skills"],
     queryFn: fetchSkills,
+  });
+
+  const [filters, setFilters] = useState<FilterState>({
+    category: "All Categories",
+    priceRange: [0, 1000],
+    rating: 0,
+    level: "All Levels",
+    location: "",
+    isOnline: null,
   });
 
   // Filter and sort logic
@@ -428,7 +423,6 @@ const SkillListingPlatform: FC = () => {
 
     return filtered;
   }, [skills, searchTerm, filters, sortBy]);
-
   // Event handlers
   const handleFilterChange = useCallback(
     (key: keyof FilterState, value: any) => {
@@ -521,38 +515,8 @@ const SkillListingPlatform: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Desktop Sidebar */}
-          <aside className="hidden lg:block w-80 flex-shrink-0 start-left-0">
-            <div className="bg-white rounded-xl shadow-sm border p-6  sticky top-8">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-gray-900">Filters</h2>
-                <button
-                  onClick={handleClearFilters}
-                  className="text-sm text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  Clear All
-                </button>
-              </div>
 
-              <div className="space-y-6">
-                {/* Categories */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Category</h3>
-                  <div className="space-y-2">
-                    {CATEGORIES.map((category) => (
-                      <FilterButton
-                        key={category}
-                        active={filters.category === category}
-                        onClick={() => handleFilterChange("category", category)}
-                        className="w-full justify-start"
-                      >
-                        {category}
-                      </FilterButton>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
+          <SideBar />
 
           {/* Main Content */}
           <main className="flex-1">

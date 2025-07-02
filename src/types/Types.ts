@@ -16,3 +16,12 @@ export interface AuthUser {
   displayName?: string;
   // Add other fields as needed
 }
+
+export type FilterState = {
+  category: string;
+  priceRange: [number, number];
+  rating: number;
+  level: string;
+  location: string;
+  isOnline: boolean | null;
+};
