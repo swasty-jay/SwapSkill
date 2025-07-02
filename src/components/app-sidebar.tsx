@@ -1,19 +1,13 @@
 import * as React from "react";
 import {
-  AudioWaveform,
   BookOpen,
   Bot,
-  Command,
-  Frame,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
   Settings2,
   SquareTerminal,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
 import {
@@ -27,7 +21,7 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "Jombotey",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
@@ -40,106 +34,100 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Design and editting",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Graphic design",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Video Editing",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Canva Design",
           url: "#",
+        },
+        {
+          title: "Photo Editing",
+          url: "#",
+        },
+        {
+          title: "Youtube Thumbmail Designing",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Programming",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Web Development",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Data Analysis",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "UI/UX Design",
+          url: "#",
+        },
+        {
+          title: "Cyber Sercurity",
+          url: "#",
+        },
+        {
+          title: "Wordpress",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Content Creation",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Tiktok ",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Facebooks ads",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "Youtube Chanel creation",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Crafts",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Make-up",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Barbering",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "Nail Tech",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "Soap Making",
           url: "#",
         },
       ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 };
@@ -152,7 +140,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
