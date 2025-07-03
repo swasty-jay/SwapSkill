@@ -46,7 +46,7 @@ export default function SponsoredSlider() {
                 key={`${sponsor.id}-${index}`}
                 className="flex-shrink-0 group cursor-pointer"
               >
-                <div className="relative  rounded-sm shadow-sm border border-gray-200/10 h-20 hover:shadow-md transition-all duration-300 hover:scale-105">
+                <div className="relative  rounded-sm shadow-sm border border-gray-200/10 h-20  transition-all duration-300 ">
                   {/* Subtle gray overlay */}
 
                   <div className="relative z-10 flex flex-col items-center space-y-3">
