@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export default function CustomerTestimonials() {
+export default function Testimonials() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 

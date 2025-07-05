@@ -88,4 +88,4 @@ export default function SponsoredSlider() {
     </div>
   );
 }
-// This component creates a sponsored slider showcasing various sponsors with their logos and categories.
+// This component creates a sponsored slider showcasing various sponsors with their logos
