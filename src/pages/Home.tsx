@@ -29,7 +29,7 @@ export const HomePage = () => {
 
       {/* Footer or Call to Action - Can be added here */}
 
-      <div className="border-t border-white/10 mt-20"></div>
+      <div className="border-t border-white/10 mt-10"></div>
 
       <Footer />
     </div>
