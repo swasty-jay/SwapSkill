@@ -25,3 +25,23 @@ export type FilterState = {
   location: string;
   isOnline: boolean | null;
 };
+
+//=========================FIREBASE TYPE DEFINITIONS=======================//
+
+export type Skill = {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  userId: string;
+  userName: string;
+  userAvatar: string;
+  createdAt: Date;
+  price: number;
+  level: string;
+  location: string;
+  tags: string[];
+  exchangeType: string;
+  imageUrl: string;
+  approved: boolean;
+};

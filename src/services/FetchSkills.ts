@@ -1,0 +1,41 @@
+import { db } from "@/firebase/Firebase";
+import {
+  collection,
+  getDocs,
+  QueryDocumentSnapshot,
+  type DocumentData,
+} from "firebase/firestore";
+import type { Skill } from "@/types/Types";
+
+// ==================== FETCH FUNCTION ====================
+
+export const FetchSkills = async (): Promise<Skill[]> => {
+  const querySnapshot = await getDocs(collection(db, "Skills"));
+
+  return querySnapshot.docs
+    .map((doc: QueryDocumentSnapshot<DocumentData>) => {
+      const data = doc.data();
+
+      // Only return approved skills//
+      if (!data.approved) return null;
+
+      return {
+        id: doc.id,
+        title: data.title || "Untitled",
+        description: data.description || "",
+        category: data.category || "",
+        userId: data.userId,
+        userName: data.userName,
+        userAvatar: data.userAvatar,
+        createdAt: data.createdAt?.toDate?.() || new Date(),
+        price: data.price || 0,
+        level: data.level || "",
+        location: data.location || "",
+        tags: data.tags || [],
+        exchangeType: data.exchangeType || "",
+        imageUrl: data.imageUrl || "",
+        approved: data.approved || false,
+      };
+    })
+    .filter(Boolean) as Skill[];
+};
