@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Home,
-  ArrowLeft,
-  Compass,
-  BookOpen,
-  Users,
-  MessageCircle,
-  ChevronRight,
-} from "lucide-react";
+import { Home, ArrowLeft, Compass } from "lucide-react";
 
 const NotFound = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -15,37 +7,6 @@ const NotFound = () => {
   useEffect(() => {
     setIsAnimated(true);
   }, []);
-
-  const navigationOptions = [
-    {
-      title: "Browse Skills",
-      description: "Discover amazing skills from our community",
-      icon: <BookOpen className="text-blue-600" size={20} />,
-      color: "bg-blue-50 hover:bg-blue-100 border-blue-200",
-      path: "/skills",
-    },
-    {
-      title: "Find Teachers",
-      description: "Connect with experienced instructors",
-      icon: <Users className="text-green-600" size={20} />,
-      color: "bg-green-50 hover:bg-green-100 border-green-200",
-      path: "/teachers",
-    },
-    {
-      title: "Community",
-      description: "Join discussions and share experiences",
-      icon: <MessageCircle className="text-purple-600" size={20} />,
-      color: "bg-purple-50 hover:bg-purple-100 border-purple-200",
-      path: "/community",
-    },
-    {
-      title: "Help Center",
-      description: "Get support and find answers",
-      icon: <Compass className="text-orange-600" size={20} />,
-      color: "bg-orange-50 hover:bg-orange-100 border-orange-200",
-      path: "/help",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
