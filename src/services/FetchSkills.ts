@@ -1,7 +1,9 @@
 import { db } from "@/firebase/Firebase";
 import {
   collection,
+  getDoc,
   getDocs,
+  doc,
   QueryDocumentSnapshot,
   type DocumentData,
 } from "firebase/firestore";
@@ -38,4 +40,20 @@ export const FetchSkills = async (): Promise<Skill[]> => {
       };
     })
     .filter(Boolean) as Skill[];
+};
+
+export const fetchSkillById = async (id: string): Promise<Skill | null> => {
+  try {
+    const docRef = doc(db, "Skills", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() } as Skill;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching skill by ID:", error);
+    throw new Error("Failed to fetch skill");
+  }
 };

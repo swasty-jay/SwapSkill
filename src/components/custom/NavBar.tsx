@@ -110,7 +110,7 @@ export const Navbar = () => {
                 <Button
                   size="lg"
                   className="backdrop-blur-md bg-[#10B981]/50 border border-white/20 text-white hover:bg-[#10B981]/80 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl"
-                  onClick={() => navigate("/skilllistingpage")}
+                  onClick={() => navigate("/SkillListingPage")}
                 >
                   Register
                 </Button>
