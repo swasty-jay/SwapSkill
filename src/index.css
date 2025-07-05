@@ -129,7 +129,7 @@
 }
 
 .animate-slide-in {
-  animation: slide-in 0.5s ease-out forwards;
+  animation: slide-in 0.5s ease-out backwards;
 }
 
 body {

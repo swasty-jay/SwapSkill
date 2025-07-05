@@ -5,12 +5,12 @@ import { useState } from "react";
 // User Avatars + Stats
 const UserBadges = () => {
   const userImages = [
-    "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=40&h=40&fit=crop&crop=face",
+    "https://avatar.iran.liara.run/public/6",
+    "https://avatar.iran.liara.run/public/7",
+    "https://avatar.iran.liara.run/public/26",
+    "https://avatar.iran.liara.run/public/8",
+    "https://avatar.iran.liara.run/public/14",
+    "https://avatar.iran.liara.run/public/10",
   ];
 
   return (
@@ -31,8 +31,8 @@ const UserBadges = () => {
       {/* Stats */}
       <div className="flex items-center gap-2 text-sm text-gray-300">
         <TrendingUp className="w-4 h-4 text-[#10B981]" />
-        <span className="font-medium text-white">5000+</span>
-        <span>Ghanaians already swapping skills</span>
+        <span className="font-medium font-roboto text-white">5000+</span>
+        <span className="font-roboto">Ghanaians already swapping skills</span>
       </div>
     </div>
   );
@@ -49,7 +49,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto space-y-6">
+      <div className="relative z-10 max-w-5xl mx-auto space-y-2  py-4 sm:py6">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow">
           <Sparkles className="w-4 h-4 text-[#10B981] font-roboto" />
@@ -63,7 +63,7 @@ export const HeroSection = () => {
         </h1>
 
         {/* Subtext */}
-        <p className="text-gray-300 max-w-xl text-base sm:text-lg leading-relaxed">
+        <p className="text-gray-300 max-w-xl text-base font-roboto sm:text-lg leading-relaxed">
           In a world where access often feels out of reach,{" "}
           <span className="text-[#10B981] font-medium">Teeva</span> connects
           Ghana's hardworking youth swapping skills, sharing experiences, and
@@ -77,14 +77,14 @@ export const HeroSection = () => {
           <div className="space-y-4">
             <Button
               size="lg"
-              className="backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-[#10B981]/20 transition-all duration-300 font-medium px-8 py-3"
+              className="backdrop-blur-md bg-white/10 border font-roboto border-white/20 text-white hover:bg-[#10B981]/20 transition-all duration-300 font-medium px-8 py-3"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onClick={() => console.log("Navigate to signup")}
             >
               Learn how it works
             </Button>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm font-roboto">
               200+ skills are free to exchange
             </p>
           </div>
