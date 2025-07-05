@@ -72,14 +72,6 @@ const NotFound = () => {
             />
             <span className="hidden sm:inline">Go Back</span>
           </button>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">SE</span>
-            </div>
-            <span className="font-bold text-gray-800 hidden sm:inline">
-              SkillExchange
-            </span>
-          </div>
         </div>
 
         {/* Main 404 Content */}
@@ -137,43 +129,6 @@ const NotFound = () => {
                 <ArrowLeft size={20} />
                 Previous Page
               </button>
-            </div>
-          </div>
-
-          {/* Navigation Options */}
-          <div
-            className={`transition-all duration-1000 delay-500 ${
-              isAnimated
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0"
-            } w-full max-w-4xl`}
-          >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-              Where would you like to go?
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {navigationOptions.map((option, index) => (
-                <button
-                  key={index}
-                  className={`${option.color} p-6 rounded-2xl text-left transition-all hover:scale-105 hover:shadow-lg border-2 group`}
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      {option.icon}
-                      <h3 className="font-semibold text-gray-800">
-                        {option.title}
-                      </h3>
-                    </div>
-                    <ChevronRight
-                      size={16}
-                      className="text-gray-400 group-hover:text-gray-600 transition-colors"
-                    />
-                  </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {option.description}
-                  </p>
-                </button>
-              ))}
             </div>
           </div>
 
