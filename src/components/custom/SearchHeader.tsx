@@ -1,7 +1,13 @@
+import { type FC } from "react";
 import { Menu, Search } from "lucide-react";
 import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { type FC } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 import CategorySidebar from "./CategorySidebar";
 import { Input } from "../ui/input";
 
@@ -18,7 +24,7 @@ const SearchHeader: FC<{
   selectedCategory,
   onCategoryChange,
 }) => (
-  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 bg-[#101822] border-b border-gray-200 shadow-sm gap-4">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 bg-[#101822] border-b border-b-white/20 border-white/10 backdrop-blur-md shadow-sm gap-4">
     <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
       {/* Mobile menu */}
       <Sheet>
@@ -32,6 +38,9 @@ const SearchHeader: FC<{
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-[300px] sm:w-80 p-4 sm:p-6">
+          <SheetHeader>
+            <SheetTitle>Filter by Category</SheetTitle>
+          </SheetHeader>
           <CategorySidebar
             tags={tags}
             selectedCategory={selectedCategory}
@@ -42,10 +51,10 @@ const SearchHeader: FC<{
 
       {/* Page title */}
       <div className="min-w-0 flex-1">
-        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 truncate">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-100 truncate">
           Discover Skills
         </h1>
-        <p className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">
+        <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block">
           Find and connect with skilled professionals
         </p>
       </div>
@@ -58,7 +67,7 @@ const SearchHeader: FC<{
         placeholder="Search skills..."
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
-        className="pl-10 pr-4 py-2 w-full border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-sm"
+        className="pl-8 pr-4 py-1 w-full border-white/10 focus:border-white/10 backdrop-blur-md focus:ring-1 focus:ring-white/10 text-sm text-gray-100"
       />
     </div>
   </div>

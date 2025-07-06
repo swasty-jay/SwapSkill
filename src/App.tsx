@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/Home";
 import SkillDetailPage from "./pages/SkillDeatilsPage";
-import SkillListingPage from "./pages/SkillListItem";
+// import SkillListingPage from "./pages/SkillListItem";
 import NotFound from "./pages/NotFound";
 import AppLayOut from "./components/Layout/AppLayOut";
+import SkillListingPage from "./pages/SkillListItem";
 
 function App() {
   return (

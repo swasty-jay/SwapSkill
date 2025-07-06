@@ -118,9 +118,9 @@ const SkillListingPage: FC = () => {
   };
 
   return (
-    <div className="flex mt-18 w-full bg-white/20">
+    <div className="flex mt-16 w-full bg-[#101822]">
       {/* Desktop Sidebar */}
-      <div className="hidden md:block w-64 lg:w-80 bg-white border-r border-gray-200 shadow-sm">
+      <div className="hidden md:block w-64 lg:w-80 bg-[#101822] border-r border-r-white/20 backdrop-blur-sm shadow-sm">
         <div className="p-4 lg:p-6 h-full overflow-y-auto">
           <CategorySidebar
             tags={tags}
