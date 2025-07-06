@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/custom/HeroSection";
-import { Navbar } from "@/components/custom/NavBar";
+// import { Navbar } from "@/components/custom/NavBar";
 import HowToGetStarted from "@/components/custom/GetStarted";
 import Footer from "@/components/custom/Footer";
 import Testimonials from "@/components/custom/Testimonial";
@@ -8,9 +8,9 @@ import SponsoredSlider from "@/components/custom/SponsoredSlider";
 
 export const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#101828] text-white overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-[#101822] text-white overflow-x-hidden">
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Hero Section */}
       <HeroSection />

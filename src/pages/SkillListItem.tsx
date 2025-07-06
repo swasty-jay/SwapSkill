@@ -1,165 +1,3 @@
-// import { useQuery } from "@tanstack/react-query";
-// import { db } from "@/firebase/Firebase";
-// import { collection, getDocs } from "firebase/firestore";
-// import { Input } from "@/components/ui/input";
-// import { Card, CardContent } from "@/components/ui/card";
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-// import { Button } from "@/components/ui/button";
-// import { Menu, Search, MapPin, User } from "lucide-react";
-// import { useState, type FC, useMemo } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { FetchSkills } from "@/services/FetchSkills";
-
-// // ================= FETCH UNIQUE TAGS FROM SKILL DOCUMENTS =================
-// const fetchTagsFromSkills = async () => {
-//   const snapshot = await getDocs(collection(db, "Skills"));
-
-//   // Collect all tags from each skill document
-//   const allTags = snapshot.docs.flatMap((doc) => doc.data().tags || []);
-
-//   // Remove duplicates using Set
-//   const uniqueTags = Array.from(new Set(allTags));
-
-//   return uniqueTags as string[];
-// };
-
-// // ================= MAIN COMPONENT =================
-// const SkillListingPage: FC = () => {
-//   const navigate = useNavigate();
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const [selectedCategory, setSelectedCategory] = useState("All");
-
-//   const { data: skills, isLoading } = useQuery({
-//     queryKey: ["Skills"],
-//     queryFn: FetchSkills,
-//   });
-
-//   const { data: tags } = useQuery({
-//     queryKey: ["tags"],
-//     queryFn: fetchTagsFromSkills,
-//   });
-
-//   // ============ FILTER & SEARCH LOGIC ============
-//   const filteredSkills = useMemo(() => {
-//     if (!skills) return [];
-//     return skills.filter((skill) => {
-//       const matchesCategory =
-//         selectedCategory === "All" ||
-//         (skill.tags || []).includes(selectedCategory);
-//       const matchesSearch =
-//         skill.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//         skill.description.toLowerCase().includes(searchTerm.toLowerCase());
-//       return matchesCategory && matchesSearch;
-//     });
-//   }, [skills, selectedCategory, searchTerm]);
-
-//   return (
-//     <div className="flex h-screen overflow-hidden">
-//       {/* ============== SIDEBAR ============== */}
-//       <div className="hidden md:block w-64 bg-white border-r p-4 overflow-y-auto">
-//         <h2 className="text-lg font-bold mb-4">Categories</h2>
-//         <Button
-//           variant={selectedCategory === "All" ? "default" : "ghost"}
-//           className="w-full justify-start mb-2"
-//           onClick={() => setSelectedCategory("All")}
-//         >
-//           All Categories
-//         </Button>
-//         {tags?.map((tag) => (
-//           <Button
-//             key={tag}
-//             variant={selectedCategory === tag ? "default" : "ghost"}
-//             className="w-full justify-start mb-2 capitalize"
-//             onClick={() => setSelectedCategory(tag)}
-//           >
-//             {tag}
-//           </Button>
-//         ))}
-//       </div>
-
-//       {/* ============== MAIN CONTENT ============== */}
-//       <div className="flex-1 flex flex-col h-full">
-//         {/* ======= TOP BAR WITH SEARCH & MOBILE MENU ======= */}
-//         <div className="flex items-center justify-between p-4 border-b bg-white">
-//           <div className="flex items-center gap-3">
-//             <Sheet>
-//               <SheetTrigger asChild>
-//                 <Button variant="ghost" size="icon" className="md:hidden">
-//                   <Menu />
-//                 </Button>
-//               </SheetTrigger>
-//               <SheetContent side="left" className="w-64">
-//                 <h2 className="text-lg font-bold mb-4">Categories</h2>
-//                 <Button
-//                   variant={selectedCategory === "All" ? "default" : "ghost"}
-//                   className="w-full justify-start mb-2"
-//                   onClick={() => setSelectedCategory("All")}
-//                 >
-//                   All Categories
-//                 </Button>
-//                 {tags?.map((tag) => (
-//                   <Button
-//                     key={tag}
-//                     variant={selectedCategory === tag ? "default" : "ghost"}
-//                     className="w-full justify-start mb-2 capitalize"
-//                     onClick={() => setSelectedCategory(tag)}
-//                   >
-//                     {tag}
-//                   </Button>
-//                 ))}
-//               </SheetContent>
-//             </Sheet>
-//             <h1 className="text-2xl font-bold">Discover Skills</h1>
-//           </div>
-//           <div className="w-60">
-//             <Input
-//               placeholder="Search skills..."
-//               value={searchTerm}
-//               onChange={(e) => setSearchTerm(e.target.value)}
-//               icon={<Search className="w-4 h-4" />}
-//             />
-//           </div>
-//         </div>
-
-//         {/* ======= SCROLLABLE SKILL CARDS ======= */}
-//         <div className="flex-1 overflow-y-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-//           {isLoading ? (
-//             <p>Loading...</p>
-//           ) : filteredSkills.length === 0 ? (
-//             <p>No skills found.</p>
-//           ) : (
-//             filteredSkills.map((skill) => (
-//               <Card
-//                 key={skill.id}
-//                 onClick={() => navigate(`/skills/${skill.id}`)}
-//                 className="hover:shadow-lg cursor-pointer transition-all"
-//               >
-//                 <CardContent className="p-4">
-//                   <h3 className="font-semibold text-lg mb-2">{skill.title}</h3>
-//                   <p className="text-sm text-gray-600 line-clamp-2">
-//                     {skill.description}
-//                   </p>
-//                   <div className="flex items-center gap-2 text-xs text-gray-500 mt-3">
-//                     <MapPin className="w-3 h-3" />
-//                     <span>{skill.location}</span>
-//                     <User className="w-3 h-3 ml-3" />
-//                     <span>{skill.userName}</span>
-//                   </div>
-//                   <div className="text-right mt-3 text-sm font-medium capitalize text-blue-600">
-//                     {skill.category}
-//                   </div>
-//                 </CardContent>
-//               </Card>
-//             ))
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SkillListingPage;
-
 import { useQuery } from "@tanstack/react-query";
 import { db } from "@/firebase/Firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -167,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Menu, Search, MapPin, User, ChevronRight, Tag } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { useState, type FC, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { FetchSkills } from "@/services/FetchSkills";
@@ -198,122 +35,9 @@ const fetchTagsFromSkills = async (): Promise<string[]> => {
   return uniqueTags as string[];
 };
 
-// ================= SKILL CARD COMPONENT =================
-const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
-  skill,
-  onClick,
-}) => (
-  <Card
-    onClick={onClick}
-    className="group relative overflow-hidden bg-white border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 w-full"
-  >
-    <CardContent className="p-4 sm:p-6">
-      {/* Header with category badge */}
-      <div className="flex items-start justify-between mb-3 sm:mb-4">
-        <Badge
-          variant="secondary"
-          className="bg-blue-50 text-blue-700 hover:bg-blue-100 font-medium text-xs px-2 sm:px-3 py-1 rounded-full flex-shrink-0"
-        >
-          {skill.category}
-        </Badge>
-        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0 ml-2" />
-      </div>
-
-      {/* Title */}
-      <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-blue-700 transition-colors">
-        {skill.title}
-      </h3>
-
-      {/* Description */}
-      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-3 sm:mb-4">
-        {skill.description}
-      </p>
-
-      {/* Tags */}
-      {skill.tags && skill.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1 mb-3 sm:mb-4">
-          {skill.tags.slice(0, 3).map((tag, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              className="text-xs px-2 py-1 bg-gray-50 border-gray-200 text-gray-600 hover:bg-gray-100"
-            >
-              {tag}
-            </Badge>
-          ))}
-          {skill.tags.length > 3 && (
-            <Badge
-              variant="outline"
-              className="text-xs px-2 py-1 bg-gray-50 border-gray-200 text-gray-500"
-            >
-              +{skill.tags.length - 3}
-            </Badge>
-          )}
-        </div>
-      )}
-
-      {/* Footer with location and user */}
-      <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
-        <div className="flex items-center gap-1 min-w-0 flex-1">
-          <MapPin className="w-3 h-3 flex-shrink-0" />
-          <span className="font-medium truncate">{skill.location}</span>
-        </div>
-        <div className="flex items-center gap-1 min-w-0 flex-1 justify-end">
-          <User className="w-3 h-3 flex-shrink-0" />
-          <span className="font-medium truncate">{skill.userName}</span>
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
-
 // ================= CATEGORY SIDEBAR COMPONENT =================
-const CategorySidebar: FC<{
-  tags: string[] | undefined;
-  selectedCategory: string;
-  onCategoryChange: (category: string) => void;
-}> = ({ tags, selectedCategory, onCategoryChange }) => (
-  <div className="space-y-3">
-    <div className="flex items-center gap-2 mb-6">
-      <Tag className="w-5 h-5 text-blue-600" />
-      <h2 className="text-lg font-bold text-gray-900">Categories</h2>
-    </div>
-
-    <Button
-      variant={selectedCategory === "All" ? "default" : "ghost"}
-      className="w-full justify-start mb-2 font-medium"
-      onClick={() => onCategoryChange("All")}
-    >
-      All Categories
-      {selectedCategory === "All" && (
-        <Badge variant="secondary" className="ml-auto bg-blue-600 text-white">
-          Active
-        </Badge>
-      )}
-    </Button>
-
-    <div className="space-y-1">
-      {tags?.map((tag) => (
-        <Button
-          key={tag}
-          variant={selectedCategory === tag ? "default" : "ghost"}
-          className="w-full justify-start capitalize font-medium text-sm"
-          onClick={() => onCategoryChange(tag)}
-        >
-          {tag}
-          {selectedCategory === tag && (
-            <Badge
-              variant="secondary"
-              className="ml-auto bg-blue-600 text-white text-xs"
-            >
-              Active
-            </Badge>
-          )}
-        </Button>
-      ))}
-    </div>
-  </div>
-);
+import CategorySidebar from "@/components/custom/CategorySidebar";
+import { SkillCard } from "@/components/custom/SkillCard";
 
 // ================= SEARCH HEADER COMPONENT =================
 const SearchHeader: FC<{
@@ -329,7 +53,7 @@ const SearchHeader: FC<{
   selectedCategory,
   onCategoryChange,
 }) => (
-  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 bg-white border-b border-gray-200 shadow-sm gap-4">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 bg-[#101822] border-b border-gray-200 shadow-sm gap-4">
     <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
       {/* Mobile menu */}
       <Sheet>
@@ -455,7 +179,7 @@ const SkillListingPage: FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex mt-18 w-full bg-white/20">
       {/* Desktop Sidebar */}
       <div className="hidden md:block w-64 lg:w-80 bg-white border-r border-gray-200 shadow-sm">
         <div className="p-4 lg:p-6 h-full overflow-y-auto">
