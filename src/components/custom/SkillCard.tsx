@@ -21,9 +21,9 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
 }) => (
   <Card
     onClick={onClick}
-    className="group relative overflow-hidden bg-gray-900 border border-gray-700 hover:border-gray-600 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 w-full"
+    className="group relative overflow-hidden  bg-gray-900 border border-gray-700 hover:border-gray-600 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 w-full"
   >
-    <CardContent className="p-4 sm:p-6">
+    <CardContent className="p-2 sm:p-3">
       {/* Header with category badge and arrow */}
       <div className="flex items-start justify-between mb-3 sm:mb-4">
         <Badge
