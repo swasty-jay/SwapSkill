@@ -51,10 +51,10 @@ const SearchHeader: FC<{
 
       {/* Page title */}
       <div className="min-w-0 flex-1">
-        <h1 className="text-xl sm:text-2xl font-bold text-gray-100 truncate">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-100 truncate font-inter">
           Discover Skills
         </h1>
-        <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block">
+        <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block font-roboto">
           Find and connect with skilled professionals
         </p>
       </div>
