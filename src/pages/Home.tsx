@@ -1,7 +1,5 @@
 import { HeroSection } from "@/components/custom/HeroSection";
-// import { Navbar } from "@/components/custom/NavBar";
 import HowToGetStarted from "@/components/custom/GetStarted";
-import Footer from "@/components/custom/Footer";
 import Testimonials from "@/components/custom/Testimonial";
 import Faqs from "@/components/custom/Faqs";
 import SponsoredSlider from "@/components/custom/SponsoredSlider";
