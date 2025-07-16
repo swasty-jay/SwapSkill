@@ -66,7 +66,7 @@ export const Navbar = () => {
               to="/"
               className="text-xl font-bold text-gray-100 hover:text-gray-300 transition-colors"
             >
-              Teeva
+              SwapSkill
             </Link>
 
             {/* Mobile Menu Button - Right Side */}
@@ -89,7 +89,7 @@ export const Navbar = () => {
                 to="/"
                 className="text-xl font-bold text-gray-100 hover:text-gray-300 transition-colors"
               >
-                Teeva
+                SwapSkill
               </Link>
 
               {/* Desktop Navigation - Center */}

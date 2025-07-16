@@ -39,7 +39,7 @@ const UserBadges = () => {
 };
 
 export const HeroSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [, setIsHovered] = useState(false);
 
   return (
     <section className="relative flex flex-col items-start min-h-[80vh] pt-22 pb-8 px-6 sm:px-10 lg:px-12 text-left overflow-hidden">
