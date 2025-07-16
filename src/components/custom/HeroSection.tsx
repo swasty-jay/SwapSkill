@@ -65,7 +65,7 @@ export const HeroSection = () => {
         {/* Subtext */}
         <p className="text-gray-300 max-w-xl text-base font-roboto sm:text-lg leading-relaxed">
           In a world where access often feels out of reach,{" "}
-          <span className="text-[#10B981] font-medium">Teeva</span> connects
+          <span className="text-[#10B981] font-medium">swapSkill</span> connects
           Ghana's hardworking youth swapping skills, sharing experiences, and
           building real opportunities, without the barriers of expensive courses
           or hidden fees.
