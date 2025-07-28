@@ -1,4 +1,3 @@
-//=======Reusable React Query hook for fetching skills=====//
 
 import { FetchSkills } from "@/services/FetchSkills";
 import type { Skill } from "@/types/Types";
@@ -10,4 +9,3 @@ export const useSkills = () => {
     queryFn: FetchSkills,
   });
 };
-// ==================== FETCH FUNCTION ====================

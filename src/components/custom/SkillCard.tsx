@@ -21,11 +21,11 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
 }) => (
   <Card
     onClick={onClick}
-    className="group relative overflow-hidden  bg-gray-900 border border-gray-700 hover:border-gray-600 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 w-full"
+    className="group relative overflow-hidden bg-gray-900 border border-gray-700 hover:border-gray-600 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 w-full min-h-[280px]"
   >
-    <CardContent className="p-2 sm:p-3">
+    <CardContent className="p-4 sm:p-5 flex flex-col h-full">
       {/* Header with category badge and arrow */}
-      <div className="flex items-start justify-between mb-3 sm:mb-4">
+      <div className="flex items-start justify-between mb-4 sm:mb-5">
         <Badge
           variant="secondary"
           className="bg-gray-800 text-gray-300 hover:bg-gray-700 font-medium text-xs px-2 sm:px-3 py-1 rounded-full flex-shrink-0 border-gray-600"
@@ -36,12 +36,12 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
       </div>
 
       {/* Title */}
-      <h3 className="font-bold text-base sm:text-lg lg:text-xl text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-gray-100 transition-colors">
+      <h3 className="font-bold text-lg sm:text-xl text-white mb-3 sm:mb-4 line-clamp-2 group-hover:text-gray-100 transition-colors">
         {skill.title}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-400 text-sm sm:text-base leading-relaxed line-clamp-3 mb-3 sm:mb-4 lg:mb-6">
+      <p className="text-gray-400 text-sm sm:text-base leading-relaxed line-clamp-3 mb-auto">
         {skill.description}
       </p>
 
@@ -69,13 +69,13 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
       )} */}
 
       {/* Footer with location and user */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400 pt-3 border-t border-gray-700">
-        <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-1">
-          <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-400 pt-4 mt-4 border-t border-gray-700">
+        <div className="flex items-center gap-2 min-w-0 flex-1">
+          <MapPin className="w-4 h-4 flex-shrink-0" />
           <span className="font-medium truncate">{skill.location}</span>
         </div>
-        <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-1 sm:justify-end">
-          <User className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+        <div className="flex items-center gap-2 min-w-0 flex-1 sm:justify-end">
+          <User className="w-4 h-4 flex-shrink-0" />
           <span className="font-medium truncate">{skill.userName}</span>
         </div>
       </div>
@@ -99,8 +99,8 @@ export default function SkillCardDemo() {
 
   return (
     <div className="min-h-screen bg-black p-4 sm:p-6 lg:p-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <SkillCard
             skill={sampleSkill}
             onClick={() => console.log("Card clicked")}
