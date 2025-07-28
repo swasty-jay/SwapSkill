@@ -190,3 +190,20 @@ body {
     left: 100%;
   }
 }
+
+.bellefair {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.belleza {
+  font-family: "Belleza", serif;
+  font-weight: 400;
+  font-style: normal;
+}
