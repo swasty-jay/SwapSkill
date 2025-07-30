@@ -115,15 +115,15 @@ export default function Footer() {
                 {/* Logo */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-xl">T</span>
+                    <span className="text-white font-bold text-xl">S</span>
                   </div>
-                  <h3 className="text-3xl font-bold font-inter bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-                    Teeva
+                  <h3 className="text-3xl font-bold cinzel bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                    Swapskill
                   </h3>
                 </div>
 
                 {/* Brand Description */}
-                <p className="text-slate-400 text-base leading-relaxed mb-8">
+                <p className="text-slate-400 text-base leading-relaxed mb-8 belleza">
                   Ghana's premier peer-to-peer skill exchange platform.
                   <span className="text-emerald-500 font-medium block mt-1">
                     Skill for Skill. Growth for All.
@@ -133,7 +133,7 @@ export default function Footer() {
 
               {/* Social Media Links */}
               <div>
-                <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
+                <h4 className="text-white bellefair font-semibold text-sm mb-4 uppercase tracking-wide">
                   Follow Us
                 </h4>
                 <div className="flex items-center gap-3">
@@ -158,7 +158,7 @@ export default function Footer() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 {navigationSections.map((section, sectionIndex) => (
                   <div key={sectionIndex}>
-                    <h4 className="text-white font-semibold text-lg mb-6 relative">
+                    <h4 className="text-white font-semibold text-lg mb-6 relative cinzel">
                       {section.title}
                       <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-emerald-500 rounded-full" />
                     </h4>
@@ -167,7 +167,7 @@ export default function Footer() {
                         <li key={linkIndex}>
                           <a
                             href="#"
-                            className="text-slate-400 hover:text-emerald-500 transition-colors text-sm flex items-center gap-2 group"
+                            className="text-slate-400 hover:text-emerald-500 transition-colors text-sm flex items-center gap-2 group belleza"
                           >
                             <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-500" />
                             {link}
@@ -183,10 +183,10 @@ export default function Footer() {
             {/* Newsletter Subscription */}
             <div className="lg:col-span-3">
               <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl">
-                <h4 className="text-white font-semibold text-lg mb-3">
+                <h4 className="text-white font-semibold text-lg mb-3 cinzel">
                   Stay Updated
                 </h4>
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                <p className="text-slate-400 text-sm mb-6 leading-relaxed belleza">
                   Get the latest updates, success stories, and exclusive tips
                   delivered to your inbox.
                 </p>
@@ -207,7 +207,7 @@ export default function Footer() {
                   <button
                     onClick={handleSubscribe}
                     disabled={isLoading || isSubscribed || !email}
-                    className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-medium py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
+                    className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-medium belleza py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
                   >
                     {isLoading ? (
                       <>
@@ -228,7 +228,7 @@ export default function Footer() {
                   </button>
                 </div>
 
-                <p className="text-xs text-slate-500 mt-3 text-center">
+                <p className="text-xs text-slate-500 mt-3 text-center belleza">
                   No spam, unsubscribe anytime.
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
             {/* Company Info */}
-            <div className="flex items-center gap-3 text-slate-400 text-sm">
+            <div className="flex items-center gap-3 text-slate-400 text-sm belleza">
               <span className="px-3 py-1 bg-emerald-500/10 text-emerald-500 rounded-full font-medium">
                 EST. 2024
               </span>
@@ -250,7 +250,7 @@ export default function Footer() {
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 belleza">
               <a href="#" className="hover:text-emerald-500 transition-colors">
                 Privacy Policy
               </a>
@@ -266,8 +266,8 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="text-slate-400 text-sm">
-              © {currentYear} Teeva. All rights reserved.
+            <div className="text-slate-400 text-sm belleza">
+              © {currentYear} SwapSkill. All rights reserved.
             </div>
           </div>
         </div>
