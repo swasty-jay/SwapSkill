@@ -25,10 +25,10 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
   >
     <CardContent className="p-4 sm:p-5 flex flex-col h-full">
       {/* Header with category badge and arrow */}
-      <div className="flex items-start justify-between mb-4 sm:mb-5">
+      <div className="flex items-start justify-between mb-4 sm:mb-5 ">
         <Badge
           variant="secondary"
-          className="bg-gray-800 text-gray-300 hover:bg-gray-700 font-medium text-xs px-2 sm:px-3 py-1 rounded-full flex-shrink-0 border-gray-600"
+          className="bg-gray-800 text-gray-300 hover:bg-gray-700 font-medium bellefair text-xs px-2 sm:px-3 py-1 rounded-full flex-shrink-0 border-gray-600"
         >
           {skill.category}
         </Badge>
@@ -36,12 +36,12 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
       </div>
 
       {/* Title */}
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-3 sm:mb-4 line-clamp-2 group-hover:text-gray-100 transition-colors">
+      <h3 className="font-bold text-lg sm:text-xl text-white mb-3 sm:mb-4 cinzel line-clamp-2 group-hover:text-gray-100 transition-colors">
         {skill.title}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-400 text-sm sm:text-base leading-relaxed line-clamp-3 mb-auto">
+      <p className="text-gray-400 text-sm belleza sm:text-base leading-relaxed line-clamp-3 mb-auto">
         {skill.description}
       </p>
 
@@ -70,11 +70,11 @@ export const SkillCard: FC<{ skill: Skill; onClick: () => void }> = ({
 
       {/* Footer with location and user */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-400 pt-4 mt-4 border-t border-gray-700">
-        <div className="flex items-center gap-2 min-w-0 flex-1">
+        <div className="flex items-center gap-2 min-w-0 flex-1 belleza">
           <MapPin className="w-4 h-4 flex-shrink-0" />
           <span className="font-medium truncate">{skill.location}</span>
         </div>
-        <div className="flex items-center gap-2 min-w-0 flex-1 sm:justify-end">
+        <div className="flex items-center belleza gap-2 min-w-0 flex-1 sm:justify-end">
           <User className="w-4 h-4 flex-shrink-0" />
           <span className="font-medium truncate">{skill.userName}</span>
         </div>

@@ -28,7 +28,7 @@ const steps: Step[] = [
     difficulty: "Easy",
   },
   {
-    number: "2",
+    number: "02",
     title: "Complete Setup",
     description:
       "Beyond genius really enough passed is up. Up maids me an ample stood given.",
@@ -90,11 +90,11 @@ export default function HowToGetStarted() {
           <div className="w-96 h-96 bg-[#10B981]/20 blur-3xl rounded-full animate-pulse-slow" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-roboto text-gray-100 mb-6 leading-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold cinzel text-gray-100 mb-6 leading-tight">
           How to get started
         </h2>
 
-        <p className="text-gray-100  font-inter text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-100 belleza text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Join thousands of professionals already growing their skills through
           meaningful exchanges. Our streamlined process gets you connected in
           minutes, not hours.
@@ -148,7 +148,7 @@ export default function HowToGetStarted() {
                   </div>
 
                   {/* Step Number Badge */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#10B981] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-md">
+                  <div className="absolute -top-2 -right-2 belleza w-8 h-8 bg-[#10B981] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-md">
                     {step.number}
                   </div>
                 </div>
@@ -156,11 +156,11 @@ export default function HowToGetStarted() {
 
               {/* Content */}
               <div className="space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-300 group-hover:text-[#10B981] transition-colors duration-300">
+                <h3 className="text-md md:text-xl font-bold text-gray-300 group-hover:text-[#10B981] transition-colors bellefair duration-300">
                   {step.title}
                 </h3>
 
-                <p className="text-gray-50 text-sm md:text-base leading-relaxed max-w-xs mx-auto">
+                <p className="text-gray-50 text-sm md:text-base belleza leading-relaxed max-w-xs mx-auto">
                   {step.description}
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function HowToGetStarted() {
               {/* Mobile connecting line */}
               {index < steps.length - 1 && (
                 <div className="md:hidden mt-8 mb-8 flex justify-center">
-                  <div className="w-px h-8 bg-gradient-to-b from-[#10B981]/30 to-transparent" />
+                  <div className="w-px h-8 bg-gradient-to-b bellza from-[#10B981]/30 to-transparent" />
                 </div>
               )}
             </div>
@@ -182,12 +182,12 @@ export default function HowToGetStarted() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#10B981] to-[#059669] text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-[#10B981]/25 transition-all duration-300 hover:scale-105 active:scale-95">
+        <button className="inline-flex belleza items-center gap-3 bg-gradient-to-r from-[#10B981] to-[#059669] text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-[#10B981]/25 transition-all duration-300 hover:scale-105 active:scale-95">
           <span>Start Your Journey Today</span>
           <ArrowRight className="h-5 w-5" />
         </button>
 
-        <p className="text-gray-500 text-sm mt-4">
+        <p className="text-gray-500 text-sm mt-4 belleza">
           No credit card required • Free forever • Join in seconds
         </p>
       </div>

@@ -38,11 +38,11 @@ export default function Faqs() {
     <div className="min-h-screen py-12 px-4 relative">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center bellefair mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-100 mb-4">
             Frequently Asked <span className="text-[#10B981]">Questions</span>
           </h1>
-          <p className="text-gray-300 max-w-xl mx-auto">
+          <p className="text-gray-300 max-w-xl mx-auto belleza">
             Got questions? We’ve got answers! Learn more about how SwapSkill
             makes skill exchange simple, fun, and free.
           </p>
@@ -56,7 +56,7 @@ export default function Faqs() {
           </div>
 
           {/* Left Column - FAQ */}
-          <div className="space-y-4 relative z-10">
+          <div className="space-y-4 relative belleza z-10">
             <Accordion type="single" collapsible className="space-y-4">
               {faqItems.map((item, index) => (
                 <AccordionItem
@@ -83,7 +83,7 @@ export default function Faqs() {
               className="w-full max-w-md"
             />
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg max-w-sm text-gray-200">
+            <div className="bg-white/10 backdrop-blur-md border bellefair border-white/20 rounded-2xl p-6 shadow-lg max-w-sm text-gray-200">
               <h3 className="text-lg font-semibold mb-3">
                 Didn’t find the answer you were looking for?
               </h3>

@@ -56,13 +56,10 @@ export default function Testimonials() {
                 : "opacity-0 -translate-x-8"
             } space-y-6`}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-100  font-inter mb-6">
-              What our <br />
-              <span className="text-[#10B981] font-bold font-inter italic">
-                learners say
-              </span>
+            <h2 className="text-xl md:text-3xl lg:text-5xl font-extrabold text-gray-100   mb-6 bellefair">
+              What our learners say
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-md font-roboto">
+            <p className="text-gray-400 text-lg leading-relaxed max-w-md belleza">
               Behind every skill is a story. At SwapSkill, real people from all
               walks of life are connecting, sharing knowledge, and unlocking new
               opportunities all without spending a dime. Whether you're
@@ -115,7 +112,7 @@ export default function Testimonials() {
                     />
                   </div>
 
-                  <div className="flex-1 min-w-0 space-y-1">
+                  <div className="flex-1 min-w-0 space-y-1 belleza">
                     <h3 className="font-bold text-[#10B981] text-lg mb-1">
                       {testimonial.name}
                     </h3>

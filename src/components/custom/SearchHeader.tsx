@@ -24,7 +24,7 @@ const SearchHeader: FC<{
   selectedCategory,
   onCategoryChange,
 }) => (
-  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-2  bg-[#101822] border-b border-b-white/20 border-white/10 backdrop-blur-md shadow-sm gap-4">
+  <div className="flex flex-col sm:flex-row items-start belleza sm:items-center justify-between p-2  bg-[#101822] border-b border-b-white/20 border-white/10 backdrop-blur-md shadow-sm gap-4">
     <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
       {/* Mobile menu */}
       <Sheet>
@@ -51,10 +51,10 @@ const SearchHeader: FC<{
 
       {/* Page title */}
       <div className="min-w-0 flex-1">
-        <h1 className="text-xl sm:text-2xl font-bold text-gray-100 truncate font-inter">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-100 truncate belleza">
           Discover Skills
         </h1>
-        <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block font-roboto">
+        <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block belleza">
           Find and connect with skilled professionals
         </p>
       </div>
