@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { db } from "@/firebase/Firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { Card, CardContent } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { useState, type FC, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,7 @@ import { FetchSkills } from "@/services/FetchSkills";
 import CategorySidebar from "@/components/custom/CategorySidebar";
 import { SkillCard } from "@/components/custom/SkillCard";
 import SearchHeader from "@/components/custom/SearchHeader";
+import LoadingSkeleton from "@/components/custom/LoadingSkeleton";
 
 // ================= TYPES =================
 interface Skill {
@@ -37,35 +37,6 @@ const fetchTagsFromSkills = async (): Promise<string[]> => {
 };
 
 // ================= SEARCH HEADER COMPONENT =================
-
-// ================= LOADING SKELETON COMPONENT =================
-const LoadingSkeleton: FC = () => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-    {[...Array(8)].map((_, index) => (
-      <Card key={index} className="animate-pulse">
-        <CardContent className="p-4 sm:p-6">
-          <div className="flex justify-between items-start mb-3 sm:mb-4">
-            <div className="h-5 sm:h-6 w-16 sm:w-20 bg-gray-200 rounded-full"></div>
-            <div className="h-4 w-4 bg-gray-200 rounded"></div>
-          </div>
-          <div className="h-5 sm:h-6 w-3/4 bg-gray-200 rounded mb-2 sm:mb-3"></div>
-          <div className="space-y-2 mb-3 sm:mb-4">
-            <div className="h-4 w-full bg-gray-200 rounded"></div>
-            <div className="h-4 w-2/3 bg-gray-200 rounded"></div>
-          </div>
-          <div className="flex gap-2 mb-3 sm:mb-4">
-            <div className="h-4 sm:h-5 w-12 bg-gray-200 rounded-full"></div>
-            <div className="h-4 sm:h-5 w-16 bg-gray-200 rounded-full"></div>
-          </div>
-          <div className="flex justify-between items-center pt-3 border-t border-gray-100">
-            <div className="h-3 sm:h-4 w-20 sm:w-24 bg-gray-200 rounded"></div>
-            <div className="h-3 sm:h-4 w-16 sm:w-20 bg-gray-200 rounded"></div>
-          </div>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-);
 
 // ================= MAIN COMPONENT =================
 const SkillListingPage: FC = () => {
@@ -146,7 +117,7 @@ const SkillListingPage: FC = () => {
           {isLoading ? (
             <LoadingSkeleton />
           ) : filteredSkills.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-64 text-center px-4">
+            <div className="flex flex-col items-center belleza justify-center h-64 text-center px-4">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                 <Search className="w-8 h-8 text-gray-400" />
               </div>
@@ -162,7 +133,7 @@ const SkillListingPage: FC = () => {
             <>
               {/* Results count */}
               <div className="mb-4 sm:mb-6">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 belleza">
                   Showing {filteredSkills.length} skill
                   {filteredSkills.length !== 1 ? "s" : ""}
                   {selectedCategory !== "All" && ` in "${selectedCategory}"`}
