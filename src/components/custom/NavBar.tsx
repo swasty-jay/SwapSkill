@@ -87,13 +87,13 @@ export const Navbar = () => {
               {/* Logo - Left Side on Desktop */}
               <Link
                 to="/"
-                className="text-xl font-bold text-gray-100 hover:text-gray-300 transition-colors"
+                className="text-xl font-bold belleza text-gray-100 hover:text-gray-300 transition-colors"
               >
                 SwapSkill
               </Link>
 
               {/* Desktop Navigation - Center */}
-              <nav className="flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+              <nav className="flex items-center belleza space-x-8 absolute left-1/2 transform -translate-x-1/2">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
@@ -109,7 +109,7 @@ export const Navbar = () => {
               <div>
                 <Button
                   size="lg"
-                  className="backdrop-blur-md bg-[#10B981]/50 border border-white/20 text-white hover:bg-[#10B981]/80 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl"
+                  className="backdrop-blur-md bg-[#10B981]/50 border belleza border-white/20 text-white hover:bg-[#10B981]/80 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl"
                   onClick={() => navigate("/SkillListingPage")}
                 >
                   Register

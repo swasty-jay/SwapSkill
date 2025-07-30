@@ -32,7 +32,7 @@ const UserBadges = () => {
       <div className="flex items-center gap-2 text-sm text-gray-300">
         <TrendingUp className="w-4 h-4 text-[#10B981]" />
         <span className="font-medium font-roboto text-white">5000+</span>
-        <span className="font-roboto">Ghanaians already swapping skills</span>
+        <span className="bellefair">Ghanaians already swapping skills</span>
       </div>
     </div>
   );
@@ -51,19 +51,19 @@ export const HeroSection = () => {
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto space-y-2  py-4 sm:py6">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow">
-          <Sparkles className="w-4 h-4 text-[#10B981] font-roboto" />
+        <div className="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 text-white belleza px-4 py-1.5 rounded-full text-sm font-medium shadow">
+          <Sparkles className="w-4 h-4 text-[#10B981] " />
           Ghana's Premier Skill Exchange Platform
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-white  font-inter leading-tight space-y-1">
+        <h1 className="text-4xl sm:text-6xl font-extrabold text-white  cinzel leading-tight space-y-1">
           <span className="block">Smart Learning.</span>
           <span className="block text-[#10B981]">Made simple for all.</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-gray-300 max-w-xl text-base font-roboto sm:text-lg leading-relaxed">
+        <p className="text-gray-300 max-w-xl belleza text-base font-roboto sm:text-lg leading-relaxed">
           In a world where access often feels out of reach,{" "}
           <span className="text-[#10B981] font-medium">swapSkill</span> connects
           Ghana's hardworking youth swapping skills, sharing experiences, and
@@ -77,14 +77,14 @@ export const HeroSection = () => {
           <div className="space-y-4">
             <Button
               size="lg"
-              className="backdrop-blur-md bg-white/10 border font-roboto border-white/20 text-white hover:bg-[#10B981]/20 transition-all duration-300 font-medium px-8 py-3"
+              className="backdrop-blur-md bg-white/10 border belleza border-white/20 text-white hover:bg-[#10B981]/20 transition-all duration-300 font-medium px-8 py-3"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onClick={() => console.log("Navigate to signup")}
             >
               Learn how it works
             </Button>
-            <p className="text-gray-400 text-sm font-roboto">
+            <p className="text-gray-400 text-sm belleza">
               200+ skills are free to exchange
             </p>
           </div>
