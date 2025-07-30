@@ -36,8 +36,6 @@ const fetchTagsFromSkills = async (): Promise<string[]> => {
   return uniqueTags as string[];
 };
 
-// ================= SEARCH HEADER COMPONENT =================
-
 // ================= MAIN COMPONENT =================
 const SkillListingPage: FC = () => {
   const navigate = useNavigate();
