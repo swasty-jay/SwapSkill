@@ -135,13 +135,6 @@
 body {
   background-color: #101828 !important;
 }
-.font-inter {
-  font-family: "Inter", sans-serif;
-}
-
-.font-roboto {
-  font-family: "Roboto", sans-serif;
-}
 
 @keyframes pulse-slow {
   0%,

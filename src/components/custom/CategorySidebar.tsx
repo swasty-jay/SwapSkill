@@ -57,7 +57,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
           {selectedCategory === tag && (
             <Badge
               variant="secondary"
-              className="ml-auto bg-blue-600 text-white text-xs"
+              className="ml-auto bg-[#10B981] text-white text-xs"
             >
               Active
             </Badge>

@@ -2,18 +2,15 @@ import { HeroSection } from "@/components/custom/HeroSection";
 import HowToGetStarted from "@/components/custom/GetStarted";
 import Testimonials from "@/components/custom/Testimonial";
 import Faqs from "@/components/custom/Faqs";
-import SponsoredSlider from "@/components/custom/SponsoredSlider";
+// import SponsoredSlider from "@/components/custom/SponsoredSlider";
 
 export const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#101822] text-white overflow-x-hidden">
-      {/* Navbar */}
-      {/* <Navbar /> */}
-
       {/* Hero Section */}
       <HeroSection />
 
-      <SponsoredSlider />
+      {/* <SponsoredSlider /> */}
 
       {/* Main Content */}
       <main className="flex flex-col space-y-24 pt-12 pb-20 px-4 sm:px-8 max-w-7xl mx-auto w-full">
@@ -21,13 +18,7 @@ export const HomePage = () => {
         <HowToGetStarted />
         <Testimonials />
         <Faqs />
-
-        {/* Popular Skills Section */}
       </main>
-
-      {/* Footer or Call to Action - Can be added here */}
-
-      {/* <div className="border-t border-white/10 mt-10"></div> */}
     </div>
   );
 };

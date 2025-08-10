@@ -8,6 +8,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface SocialLink {
   icon: React.ElementType;
@@ -53,7 +54,7 @@ export default function Footer() {
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/teeva",
+      href: "https://instagram.com/Swasty__jay",
       label: "Instagram",
     },
   ];
@@ -71,17 +72,11 @@ export default function Footer() {
     },
     {
       title: "Company",
-      links: ["About Us", "Our Mission", "Careers", "Press Kit", "Blog"],
+      links: ["About Us", "Our Mission", "Careers", "Blog"],
     },
     {
       title: "Support",
-      links: [
-        "Help Center",
-        "Contact Us",
-        "Safety Center",
-        "Report Issue",
-        "FAQs",
-      ],
+      links: ["Help Center", "Contact Us", "Report Issue", "FAQs"],
     },
   ];
 
@@ -165,13 +160,13 @@ export default function Footer() {
                     <ul className="space-y-3">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <a
-                            href="#"
+                          <Link
+                            to="/"
                             className="text-slate-400 hover:text-emerald-500 transition-colors text-sm flex items-center gap-2 group belleza"
                           >
                             <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-500" />
                             {link}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

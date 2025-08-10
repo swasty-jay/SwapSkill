@@ -5,6 +5,7 @@ import SkillDetailPage from "./pages/SkillDeatilsPage";
 import NotFound from "./pages/NotFound";
 import AppLayOut from "./components/Layout/AppLayOut";
 import SkillListingPage from "./pages/SkillListItem";
+import SkillUploadForm from "./components/custom/SkillUploadForm";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/SkillListingPage" element={<SkillListingPage />} />
         <Route path="/skills/:id" element={<SkillDetailPage />} />
+        <Route path="/skills" element={<SkillListingPage />} />
+        <Route path="/upload-skill" element={<SkillUploadForm />} />
       </Route>
       {/*  routes not needed within the layout */}
       <Route path="*" element={<NotFound />} />
