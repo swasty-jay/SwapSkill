@@ -35,10 +35,10 @@ const faqItems = [
 
 export default function Faqs() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
+    <section className="py-8 px-2 sm:px-5 lg:px-7 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           {/* Decorative element */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#10B981] to-transparent" />
@@ -93,8 +93,8 @@ export default function Faqs() {
           </div>
 
           {/* Right Column - Enhanced Illustration and CTA */}
-          <div className="lg:sticky lg:top-8 space-y-8 relative z-10">
-            <div className="relative">
+          <div className="lg:sticky lg:top-8 space-y-8 relative z-10 ">
+            <div className="relative hidden md:block">
               <div className="absolute inset-0 bg-gradient-to-b from-[#10B981]/10 to-transparent blur-2xl rounded-full" />
               <img
                 src="/faqs.svg"
