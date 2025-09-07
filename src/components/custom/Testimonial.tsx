@@ -54,13 +54,6 @@ export default function Testimonials() {
 
   return (
     <section className="pt-20 pb-72 sm:py-20 px-4 sm:px-6 lg:px-8  relative overflow-hidden">
-      {/* Enhanced background effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#10B981]/5 blur-[120px] rounded-full" />
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* LEFT SIDE - Enhanced Content */}

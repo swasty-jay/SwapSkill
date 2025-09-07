@@ -35,39 +35,56 @@ const faqItems = [
 
 export default function Faqs() {
   return (
-    <div className="min-h-screen py-12 px-4 relative">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center bellefair mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-100 mb-4">
-            Frequently Asked <span className="text-[#10B981]">Questions</span>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          {/* Decorative element */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#10B981] to-transparent" />
+            <span className="text-[#10B981] uppercase tracking-wider text-sm font-semibold belleza">
+              FAQ
+            </span>
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#10B981] to-transparent" />
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black cinzel text-white mb-6 leading-tight">
+            Frequently Asked{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-emerald-400">
+              Questions
+            </span>
           </h1>
-          <p className="text-gray-300 max-w-xl mx-auto belleza">
-            Got questions? We’ve got answers! Learn more about how SwapSkill
-            makes skill exchange simple, fun, and free.
+
+          <p className="text-gray-300 text-lg md:text-xl belleza max-w-2xl mx-auto leading-relaxed">
+            Got questions? We've got answers! Learn more about how SwapSkill
+            makes skill exchange simple, fun, and accessible for everyone.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
-          {/* Subtle animated background */}
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-            <div className="w-96 h-96 bg-[#10B981]/20 blur-3xl rounded-full animate-pulse-slow" />
-          </div>
-
-          {/* Left Column - FAQ */}
-          <div className="space-y-4 relative belleza z-10">
-            <Accordion type="single" collapsible className="space-y-4">
+        {/* Main Content with Enhanced Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start relative">
+          {/* Left Column - Enhanced FAQ Accordion */}
+          <div className="space-y-4 relative z-10">
+            <Accordion type="single" collapsible className="space-y-6">
               {faqItems.map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-lg transition-all duration-300 hover:shadow-xl"
+                  className="group border-none"
                 >
-                  <AccordionTrigger className="flex items-center justify-between text-left w-full text-gray-200 font-medium text-base hover:no-underline">
-                    <span>{item.question}</span>
+                  <AccordionTrigger
+                    className="flex items-start gap-6 p-6 bg-gray-900/80 backdrop-blur-xl rounded-2xl border border-gray-800
+                      transition-all duration-300 hover:border-[#10B981]/20 hover:shadow-lg hover:shadow-[#10B981]/5 text-left w-full
+                      data-[state=open]:rounded-b-none"
+                  >
+                    <span className="flex-1 text-lg text-white font-medium bellefair group-hover:text-[#10B981] transition-colors">
+                      {item.question}
+                    </span>
                   </AccordionTrigger>
-                  <AccordionContent className="mt-3 text-gray-300 leading-relaxed text-sm">
+                  <AccordionContent
+                    className="px-6 pb-6 pt-2 bg-gray-900/80 backdrop-blur-xl border-x border-b border-gray-800 
+                    rounded-b-2xl text-gray-300 belleza text-base leading-relaxed"
+                  >
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -75,32 +92,44 @@ export default function Faqs() {
             </Accordion>
           </div>
 
-          {/* Right Column - Illustration */}
-          <div className="flex flex-col items-center justify-center text-center space-y-6 relative z-10">
-            <img
-              src="/faqs.svg"
-              alt="Skill sharing illustration"
-              className="w-full max-w-md"
-            />
+          {/* Right Column - Enhanced Illustration and CTA */}
+          <div className="lg:sticky lg:top-8 space-y-8 relative z-10">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#10B981]/10 to-transparent blur-2xl rounded-full" />
+              <img
+                src="/faqs.svg"
+                alt="Skill sharing illustration"
+                className="relative w-full max-w-md mx-auto transform hover:scale-105 transition-transform duration-500"
+              />
+            </div>
 
-            <div className="bg-white/10 backdrop-blur-md border bellefair border-white/20 rounded-2xl p-6 shadow-lg max-w-sm text-gray-200">
-              <h3 className="text-lg font-semibold mb-3">
-                Didn’t find the answer you were looking for?
+            <div
+              className="bg-gray-900/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-800 
+              hover:border-[#10B981]/20 transition-all duration-300 max-w-md mx-auto shadow-xl"
+            >
+              <h3 className="text-2xl font-bold text-white bellefair mb-4">
+                Still have questions?
               </h3>
-              <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                Our team is always happy to help. Reach out and we'll get back
-                to you as soon as possible.
+              <p className="text-gray-300 belleza mb-6 leading-relaxed">
+                Can't find the answer you're looking for? Our team is here to
+                help. We'll get back to you as soon as possible.
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#10B981] text-white font-medium rounded-xl hover:bg-[#0ea76b] transition-all shadow-md w-full"
+                className="group relative inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r 
+                  from-[#10B981] to-[#059669] text-white text-lg font-semibold rounded-xl shadow-lg 
+                  hover:shadow-[#10B981]/30 transition-all duration-300 hover:scale-[1.02] overflow-hidden"
               >
-                Contact Us
+                <span className="relative z-10">Contact Support</span>
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
+                  translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+                />
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

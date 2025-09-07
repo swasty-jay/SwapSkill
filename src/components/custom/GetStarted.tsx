@@ -88,7 +88,7 @@ const StepCard = ({
 
         {/* Main card */}
         <div
-          className="relative bg-gray-900/80 backdrop-blur-sm border border-gray-800/50 rounded-3xl 
+          className="relative  backdrop-blur-sm border border-gray-800/50 rounded-3xl 
           hover:border-emerald-500/30 transition-all duration-500 overflow-hidden group-hover:shadow-2xl 
           group-hover:shadow-emerald-500/10"
         >
