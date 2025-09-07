@@ -45,11 +45,11 @@ export default function Footer() {
   };
 
   const socialLinks: SocialLink[] = [
-    { icon: Facebook, href: "https://facebook.com/teeva", label: "Facebook" },
-    { icon: Twitter, href: "https://twitter.com/teeva", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com/swapskill", label: "Facebook" },
+    { icon: Twitter, href: "https://twitter.com/swapskill", label: "Twitter" },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/company/teeva",
+      href: "https://linkedin.com/company/swapskill",
       label: "LinkedIn",
     },
     {
